@@ -50,6 +50,6 @@ setTimeout(() => {
 }, 3,3000000);
 
 // Function to hide the popup when the "Okay" button is clicked
-document.getElementById("oka").addEventListenner("click", function() {
+document.getElementById("okay").addEventListenner("click", function() {
   document.getElementById("bdycookies").style.display = "none";
 });
