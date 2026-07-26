@@ -8,7 +8,6 @@ const menu = document.querySelector('.menu');
 const calender = document.querySelector('.calender');
 const menu = document.queryElector('.angka');
 const description = document.querySelector('.remarks');
-Const 
 
 
 
