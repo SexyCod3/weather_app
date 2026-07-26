@@ -1,85 +1,143 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css ">>
-<link rel="stylesheet" href="weather_app.css">
-<title>weather_web_app</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="weather_app.css">
+
+    <title>Weather Web App</title>
 </head>
+
 <body>
 
+    <!---------------- Navbar ---------------->
+    <div class="navbar">
 
-<!-------------------------------------->
-  <div class = "navbar">
-    <div class = "menu"><i class='bx bx-menu'></div></div></div>
-    <div class = "calender"><i class='bx bx-calendar'></div></div></div>
-  </div>
+        <div class="menu">
+            <i class='bx bx-menu'></i>
+        </div>
 
-  <!---------------------------------------------------->
-  <div class= "content">
-    <div class ="kota">BATAM, Indonesia</div>
-    <div class = "weather"><i class='bx bx-cloud'></div></div>
-    <div class = "degree">
-      <div class="angka">29°C</div>
-      <span class="remarks">eightsomes cloudy</span>
+        <div class="calender">
+            <i class='bx bx-calendar'></i>
+        </div>
+
     </div>
 
+    <!---------------- Content ---------------->
 
-    <!------Others---->
-    <div class = "presentage">
-      <div class="speed_angin">
-        <i class='bx bx-wind'></i>
-        <span>11km/hrs</span>
-      </div>
-      <div class = "holiday">
-        <i class='bx b-water'></i>
-        <span>2%</span>
-      </div>
-    </div> 
-  </div>
+    <div class="content">
 
+        <div class="kota">
+            BATAM, Indonesia
+        </div>
 
-  <!-----part forecast----->
-  <div class="forecast">
-    <div class="headend">
-      <i class='bx bx-history'></i>
-      <span>Hourly Forecast</pan>
+        <div class="weather">
+            <i class='bx bx-cloud'></i>
+        </div>
+
+        <div class="degree">
+
+            <div class="angka">
+                29°C
+            </div>
+
+            <span class="remarks">
+                Slightly Cloudy
+            </span>
+
+        </div>
+
+        <div class="presentage">
+
+            <div class="speed_angin">
+                <i class='bx bx-wind'></i>
+                <span>11 km/h</span>
+            </div>
+
+            <div class="holiday">
+                <i class='bx bx-water'></i>
+                <span>82%</span>
+            </div>
+
+        </div>
+
     </div>
-    <div class = "tablet">
-      <div class = "tablet1"></div>
-      <div class = "tablet2"></div>
-      <div class = "tablet3"></div>
-      <div class = "tablet4"></div>
+
+    <!---------------- Forecast ---------------->
+
+    <div class="forecast">
+
+        <div class="headend">
+            <i class='bx bx-history'></i>
+            <span>Hourly Forecast</span>
+        </div>
+
+        <div class="tablet">
+
+            <div class="tablet1"></div>
+            <div class="tablet2"></div>
+            <div class="tablet3"></div>
+            <div class="tablet4"></div>
+
+        </div>
+
     </div>
-  </div>
 
+    <!---------------- Bottom Navigation ---------------->
 
-  <!----part navfooter---->
-  <div class=" navfooter">
-    <span class="home"><i class='bx bx-home'></i></span></span>
-    <span class="search"><i class='bx bx-search'></span></span>
-    <span class="notif"><i class='bx bx-bell'></i></span></span>
-    <span class="map"><i class='bx bx-map'></span></span>  
-  </div>
+    <div class="navfooter">
 
+        <span class="home">
+            <i class='bx bx-home'></i>
+        </span>
 
+        <span class="search">
+            <i class='bx bx-search'></i>
+        </span>
 
+        <span class="notif">
+            <i class='bx bx-bell'></i>
+        </span>
 
+        <span class="map">
+            <i class='bx bx-map'></i>
+        </span>
 
-<!---====cookies html desaign========================================---->
-  <div class="bdycookies" id="bdycookies">
-    <div class="main">
-   <img src="more steady.sept.sebg"></img>
-    <span class="span">Your privacy is important to us. We use cookies for different purposes.<a href="#">Learn More</a></span>
     </div>
-    <div class="button">
-   <button class="got" id="okay"><a href="#\kout></button>
-   </div>
-  </div>
-<!---====cookies html desaign========================================--->
-  
-  
-  <script src="weather_app.js"></script>
+
+    <!---------------- Cookie ---------------->
+
+    <div class="bdycookies" id="bdycookies">
+
+        <div class="main">
+
+            <img src="cookie.png" alt="Cookie">
+
+            <span class="span">
+                Your privacy is important to us.
+                We use cookies for different purposes.
+                <a href="#">Learn More</a>
+            </span>
+
+        </div>
+
+        <div class="button">
+
+            <button class="got" id="okay">
+                <a href="#">OK</a>
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="weather_app.js"></script>
+
 </body>
+
 </html>
