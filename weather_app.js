@@ -43,12 +43,18 @@ const description = document.querySelector('.remarks');
 
 
 
-// Function to display the popup after 1 minute (60000 ms)
-setTimeout(() => {
-  document.getElementById("bdycookies").style.display = "block";
-}, 3,3000000);
+const popup = document.getElementById("bdycookies");
+const button = document.getElementById("okay");
 
-// Function to hide the popup when the "Okay" button is clicked
-document.getElementById("okay").addEventListenner("click", function() {
-  document.getElementById("bdycookies").style.display = "none";
+// Tampilkan popup jika belum pernah disetujui
+if (!localStorage.getItem("cookieAccepted")) {
+    setTimeout(() => {
+        popup.style.display = "block";
+    }, 3000);
+}
+
+// Simpan persetujuan
+button.addEventListener("click", () => {
+    popup.style.display = "none";
+    localStorage.setItem("cookieAccepted", "true");
 });
