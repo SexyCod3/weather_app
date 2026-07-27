@@ -16,7 +16,7 @@ const lembab = document.querySelector('.lembab');
 const apiKey = "0421d0456f4c466ab94133440262607";
 
 
-async function getUsers() {
+async function getWeather() {
   try {
     const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=samarinda`);
 
@@ -51,7 +51,7 @@ async function getUsers() {
   }
 }
 
-getUsers();
+getWeather();
 
 
 
