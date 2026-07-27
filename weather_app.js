@@ -40,7 +40,7 @@ async function getWeather() {
     remarks.textContent = data.current.condition.text;
 
     //ambil kecepatan angin
-    speed.textContent = `${data.current.wind_kph} /kph`;
+    speed.textContent = `${data.current.wind_kph} kph`;
 
   //ambil kelembaban udara
    lembab.textContent = `${data.current.humidity} %`;
