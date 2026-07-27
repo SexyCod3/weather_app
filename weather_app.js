@@ -4,7 +4,7 @@
 
 
 // we first capture all the html classes that exist.
-const angka = document.queryElector('.angka');
+const angka = document.querySelector('.angka');
 const remarks = document.querySelector('.remarks');
 const kota = document.querySelector('.kota');
 const speed = document.querySelector('.speed');
