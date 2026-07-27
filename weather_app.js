@@ -32,13 +32,16 @@ async function getUsers() {
     kota.textContent = `${data.location.name}, ${data.location.country}`;
 
     //ambil temperatur
+    if (angka) {
     angka.textContent = `${data.current.temp_c}°C`;
+    }
 
     //ambil keterangan
     remarks.textContent = data.current.condition.text;
 
     //ambil kecepatan angin
-    speed.textContent = `${data.current.wind_kph} /kph`;
+    speed.textContent = `$
+      {data.current.wind_kph} /kph`;
 
   //ambil kelembaban udara
    lembab.textContent = `${data.current.humidity} %`;
