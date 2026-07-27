@@ -4,11 +4,51 @@
 
 
 // we first capture all the html classes that exist.
-const menu = document.querySelector('.menu');
-const calender = document.querySelector('.calender');
-const menu = document.queryElector('.angka');
-const description = document.querySelector('.remarks');
-Const 
+const angka = document.queryElector('.angka');
+const remarks = document.querySelector('.remarks');
+const kota = document.querySelector('.kota');
+const speed = document.querySelector('.speed');
+const lembab = document.querySelector('.lembab');
+
+
+
+//kita persiapkan dulu API weathernya
+const apiKey = "0421d0456f4c466ab94133440262607";
+
+
+async function getUsers() {
+  try {
+    const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=samarinda`);
+
+
+//pengecekan akses atau kendala request API
+    if (!res.ok) {
+      throw new Error("Gagal mengambil data");
+    }
+
+    
+    const data = await res.json();
+    //ambil nama lokasi
+    kota.textContent = `${data.location.name}, ${data.location.country}`;
+
+    //ambil temperatur
+    angka.textContent = `${data.current.temp_c}°C`;
+
+    //ambil keterangan
+    remarks.textContent = data.current.condition.text;
+
+    //ambil kecepatan angin
+    speed.textContent = `${data.current.wind_kph} /kph`;
+
+  //ambil kelembaban udara
+   lembab.textContent = `${data.current.humidity} %`;
+    
+  } catch (err) {
+    console.log("Error:", err);
+  }
+}
+
+getUsers();
 
 
 
@@ -44,12 +84,22 @@ Const
 
 
 
-// Function to display the popup after 1 minute (60000 ms)
-setTimeout(() => {
-  document.getElementById("bdycookies").style.display = "block";
-}, 3,3000000);
 
-// Function to hide the popup when the "Okay" button is clicked
-document.getElementById("oka").addEventListenner("click", function() {
-  document.getElementById("bdycookies").style.display = "none";
+
+
+
+const popup = document.getElementById("bdycookies");
+const button = document.getElementById("okay");
+
+// Tampilkan popup jika belum pernah disetujui
+if (!localStorage.getItem("cookieAccepted")) {
+    setTimeout(() => {
+        popup.style.display = "block";
+    }, 3000);
+}
+
+// Simpan persetujuan
+button.addEventListener("click", () => {
+    popup.style.display = "none";
+    localStorage.setItem("cookieAccepted", "true");
 });
