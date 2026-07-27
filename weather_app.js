@@ -18,7 +18,7 @@ const apiKey = "0421d0456f4c466ab94133440262607";
 
 async function getWeather() {
   try {
-    const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=maumere`);
+    const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Maumere`);
 
 
 //pengecekan akses atau kendala request API
