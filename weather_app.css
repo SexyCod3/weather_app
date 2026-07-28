@@ -7,7 +7,7 @@
 }
 
 @media (max-width:768px){
-  
+
 
 
 body{
@@ -101,6 +101,47 @@ body{
     font-size:24px;
     color:#5b8def;
 }
+
+
+
+
+  .searching_colom{
+    margin-left:70%;
+    transform:translateX(-50%);
+    width:260px;
+    height:50px;
+    background:#fff;
+    border-radius:30px;
+    display:none;
+    align-self:center;
+    justify-content:center;
+    justify-self: center;
+    align-items:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    z-index: 9999;
+  }
+
+  #cityInput{
+    align-self: center;
+    justify-self:center;
+    border:none;
+    margin-left:20px;
+    margin-top:20px;
+    width:content-box;
+    
+  }
+  #cityInput:focus{
+  outline: none;
+  border: none;
+    
+  }
+  
+  .submit{
+   background:transparent;
+   border:none;
+  font-size:25px;
+  }
+  
 
 /* ================= FORECAST ================= */
 
