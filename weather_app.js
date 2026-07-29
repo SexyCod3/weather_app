@@ -90,7 +90,7 @@ function updateWeatherIcon(conditionText) {
     let iconName = weatherIcons.cloudy;
   } 
   else if (condition.includes("clear") || condition.includes("sunny")) {
-    let iconName = {weatherIcons.sunny;
+    let iconName = weatherIcons.sunny;
   } 
   else {
     // Default jika kata kunci tidak terdeteksi
