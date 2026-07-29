@@ -53,6 +53,10 @@ body{
     font-size:120px;
     color:#5b8def;
 }
+.bx{
+   font-size:120px;
+    color:#5b8def;  
+}
 
 .degree{
     display:flex;
