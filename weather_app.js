@@ -78,23 +78,23 @@ function updateWeatherIcon(conditionText) {
   const condition = conditionText.toLowerCase();
 
   if (condition.includes("rain") || condition.includes("drizzle")) {
-    icon.className = `bx ${weatherIcons.rain}`;
+    let iconName = `bx ${weatherIcons.rain}`;
   } 
   else if (condition.includes("snow") || condition.includes("ice") || condition.includes("blizzard")) {
-    icon.className = `bx ${weatherIcons.snow}`;
+    let iconName = `bx ${weatherIcons.snow}`;
   } 
   else if (condition.includes("overcast") || condition.includes("mist") || condition.includes("fog")) {
-    icon.className = `bx ${weatherIcons.overcast}`;
+    let iconName = `bx ${weatherIcons.overcast}`;
   } 
   else if (condition.includes("cloud")) {
-    icon.className = `bx ${weatherIcons.cloudy}`;
+    let iconName = `bx ${weatherIcons.cloudy}`;
   } 
   else if (condition.includes("clear") || condition.includes("sunny")) {
-    icon.className = `bx ${weatherIcons.sunny}`;
+    let iconName = `bx ${weatherIcons.sunny}`;
   } 
   else {
     // Default jika kata kunci tidak terdeteksi
-    icon.className = `bx ${weatherIcons.cloudy}`; 
+    let iconName = `bx ${weatherIcons.cloudy}`; 
   }
 }
 
