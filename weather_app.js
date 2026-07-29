@@ -18,6 +18,7 @@ const navfooter = document.querySelector('.navfooter');
 
 
 //ini bagian untuk tampil API
+const icon = document.querySelector('.weather')
 const angka = document.querySelector('.angka');
 const remarks = document.querySelector('.remarks');
 const kota = document.querySelector('.kota');
@@ -62,7 +63,40 @@ submit.addEventListener("click", () => {
 });
 
 
+//icon cuaca
+const weatherIcons = {
+  rain: "bx-cloud-rain",
+  snow: "bx-snowflake",
+  cloudy: "bx-cloud",
+  overcast: "bx-clouds",
+  sunny: "bx-sun"
+};
 
+// 3. Fungsi yang memproses teks bahasa Inggris dari API
+function updateWeatherIcon(conditionText) {
+  // Ubah teks ke huruf kecil agar pemeriksaan tidak sensitif huruf besar/kecil
+  const condition = conditionText.toLowerCase();
+
+  if (condition.includes("rain") || condition.includes("drizzle")) {
+    icon.className = `bx ${weatherIcons.rain}`;
+  } 
+  else if (condition.includes("snow") || condition.includes("ice") || condition.includes("blizzard")) {
+    icon.className = `bx ${weatherIcons.snow}`;
+  } 
+  else if (condition.includes("overcast") || condition.includes("mist") || condition.includes("fog")) {
+    icon.className = `bx ${weatherIcons.overcast}`;
+  } 
+  else if (condition.includes("cloud")) {
+    icon.className = `bx ${weatherIcons.cloudy}`;
+  } 
+  else if (condition.includes("clear") || condition.includes("sunny")) {
+    icon.className = `bx ${weatherIcons.sunny}`;
+  } 
+  else {
+    // Default jika kata kunci tidak terdeteksi
+    icon.className = `bx ${weatherIcons.cloudy}`; 
+  }
+}
 
 
 
@@ -96,6 +130,17 @@ async function getWeather(city) {
 
   //ambil kelembaban udara
    lembab.textContent = `${data.current.humidity} %`;
+
+
+   //icon cuaca
+   const kondisiTeks = data.current.condition.text;
+
+    if (remarks) {
+      remarks.textContent = kondisiTeks;
+    }
+
+    // Ubah ikon sesuai kondisi yang didapat!
+    updateWeatherIcon(kondisiTeks);
 
   } catch (err) {
     console.log("Error:", err);
