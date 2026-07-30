@@ -18,7 +18,7 @@ const navfooter = document.querySelector('.navfooter');
 
 
 //ini bagian untuk tampil API
-const icon = document.querySelector('.weather')
+const icon = document.querySelector('.weather2')
 const angka = document.querySelector('.angka');
 const remarks = document.querySelector('.remarks');
 const kota = document.querySelector('.kota');
@@ -58,9 +58,20 @@ submit.addEventListener("click", () => {
   navfooter.style.display = 'flex';
 
   const city = cityInput.value;
- 
+
    getWeather(city);
 });
+
+//background cuaca
+//kita ambil dulu body html
+const body = document.querySelector('body');
+
+const weatherBackgrounds = {
+ hujan: "url('https://i.pinimg.com/736x/c4/95/aa/c495aa26106581c4cb270dfa14267e70.jpg')",
+ salju: "url('https://i.pinimg.com/1200x/3c/8b/74/3c8b74895e4d2664a2e73bde8efdf3b4.jpg')",
+ awan: "url('https://i.pinimg.com/736x/02/27/04/022704323991c25aef91e80883b4f86c.jpg')",
+ cerah: "url('https://i.pinimg.com/736x/26/5d/4b/265d4ba78bde5abec2d40881ca94838d.jpg')"
+};
 
 
 //icon cuaca
@@ -75,27 +86,55 @@ const weatherIcons = {
 // 3. Fungsi yang memproses teks bahasa Inggris dari API
 function updateWeatherIcon(conditionText) {
   // Ubah teks ke huruf kecil agar pemeriksaan tidak sensitif huruf besar/kecil
+  //const kondisiTeks = data.current.condition.text;
+  let bgUrl = weatherBackgrounds.awan;
   const condition = conditionText.toLowerCase();
 
   if (condition.includes("rain") || condition.includes("drizzle")) {
-    let iconName = weatherIcons.rain;
+    
+    icon.className = `weather2 bx ${weatherIcons.rain}`;
+    bgUrl = weatherBackgrounds.hujan;
+
+    //icon.textContent=weatherIcons.rain;
   } 
   else if (condition.includes("snow") || condition.includes("ice") || condition.includes("blizzard")) {
-    let iconName = weatherIcons.snow;
+
+     icon.className = `weather2 bx ${weatherIcons.snow}`;
+    bgUrl= weatherBackgrounds.salju;
+
+    //icon.textContent = weatherIcons.snow;
   } 
   else if (condition.includes("overcast") || condition.includes("mist") || condition.includes("fog")) {
-    let iconName = weatherIcons.overcast;
+    
+    icon.className = `weather2 bx ${weatherIcons.overcast}`;
+    bgUrl = weatherBackgrounds.awan;
+
+    
+    //icon.textContent = weatherIcons.overcast;
   } 
   else if (condition.includes("cloud")) {
-    let iconName = weatherIcons.cloudy;
+
+    icon.className = `weather2 bx ${weatherIcons.cloudy}`;
+    bgUrl=weatherBackgrounds.awan;
+
+    //icon.textContent= weatherIcons.cloudy;
   } 
   else if (condition.includes("clear") || condition.includes("sunny")) {
-    let iconName = weatherIcons.sunny;
+   
+    icon.className = `weather2 bx ${weatherIcons.sunny}`;
+    bgUrl=weatherBackgrounds.cerah;
+    
+    // icon.textContent = weatherIcons.sunny;
   } 
   else {
     // Default jika kata kunci tidak terdeteksi
-    let iconName = weatherIcons.cloudy; 
+   icon.className = `weather2 bx ${weatherIcons.cloudy}`;
+    bgUrl=weatherBackgrounds.awan;
+    
+    //icon.textContent = weatherIcons.cloudy; 
+
   }
+  body.style.backgroundImage = bgUrl;
 }
 
 
@@ -135,19 +174,20 @@ async function getWeather(city) {
    //icon cuaca
    const kondisiTeks = data.current.condition.text;
 
-    if (remarks) {
-      remarks.textContent = kondisiTeks;
-    }
+    //if (remarks) {
+     // icon.textContent = kondisiTeks;
+   // }
 
     // Ubah ikon sesuai kondisi yang didapat!
     updateWeatherIcon(kondisiTeks);
+    
 
   } catch (err) {
     console.log("Error:", err);
   }
 }
 window.addEventListener("DOMContentLoaded", () => {
-    getWeather("Jakarta");
+    getWeather("maumere");
 });
 
 
